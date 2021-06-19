@@ -153,3 +153,151 @@
     </body>
 </html>  
 
+
+                                          <!-- FOR PRACTICE BY OWN   >
+
+            
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        
+        <title>TAP TAP</title>
+        
+        <style>
+            body{
+                font-family: 'Montserrat', sans-serif; 
+                background: rgb(17, 16, 16)
+            }
+            .app{
+                height: 100vh;
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+                flex-direction: column;
+            }
+            header{
+                text-align: center;
+                color: rgb(78, 65, 151)
+            }
+            h1{
+                margin: 1cm 0cm 0.7cm 0cm;
+            }
+            .pads{
+                display: flex;
+                width: 100%;
+                background: rgb(158, 168, 13);
+                margin-top: 10.8cm;
+            }
+            .pads > div{
+                height: 100px;
+                width: 100px;
+                flex: 1;
+            }
+            .pad1{
+                background: rgb(180, 103, 116);
+             }
+             .pad2{
+                background: rgb(27, 94, 47);
+             }
+             .pad3{
+                background: rgb(50, 45, 97);
+             }
+             .pad4{
+                background: rgb(16, 147, 199);
+             }
+             .pad5{
+                background: rgb(180, 70, 19);
+             }
+             .pad6{
+                background: rgb(156, 189, 144);
+             }
+             .visual > div{
+                 position: absolute;
+                 height: 50px;
+                 width: 50px;
+                 border-radius: 50%;
+                 bottom: 0%;
+                 z-index: -1;
+             }
+             @keyframes jump{
+                 0%{
+                     bottom: 0%;
+                     left: 20%;
+                 }
+                 50%{
+                     bottom: 50%;
+                     left: 50%;
+                 }
+                 100%{
+                     bottom: 0%;
+                     left: 80%;
+                 }
+             }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <header>
+                <h1>TAP MUSIC</h1>
+                <p>Make Cool Music By Using Tapping The Beats</p>
+            </header>
+            <div class="visual"></div>
+            <div class="pads">
+                <div class="pad1">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\moon.mp3"></audio>
+                </div>
+                <div class="pad2">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\pe.mp3"></audio>
+                </div>
+                <div class="pad3">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\jana.mp3"></audio>
+                </div>
+                <div class="pad4">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\hai.mp3"></audio>
+                </div>
+                <div class="pad5">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\by.mp3"></audio>
+                </div>
+                <div class="pad6">
+                    <audio class="sound" src="C:\Users\Harsh sharma\Music\sounds\cycle.mp3"></audio>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener("load", () => {
+                const sound=document.querySelectorAll(".sound");
+                const pads=document.querySelectorAll(".pads div");
+                const visual=document.querySelector(".visual");
+                const colors=[
+                    "rgb(180, 103, 116)",
+                    "rgb(27, 94, 47)",
+                    "rgb(50, 45, 97)",
+                    "rgb(16, 147, 199)",
+                    "rgb(180, 70, 19)",
+                    "rgb(156, 189, 144)"
+                ];
+                pads.forEach((pad,index) => {
+                    pad.addEventListener("click", () => {
+                        sound[index].currentTime=0;
+                        sound[index].play();
+                        create(index);
+                    });
+                });
+                //function for creating jumping balls for animation
+                const create = (index) => {
+                  const bubble=document.createElement("div");
+                  visual.appendChild(bubble);
+                  bubble.style.backgroundColor=colors[index];
+                  bubble.style.animation="jump 1s ease";
+                  bubble.addEventListener("animationend", function(){
+                      visual.removeChild(this);
+                  });  
+                };
+            });
+        </script>
+    </body>
+</html-->
